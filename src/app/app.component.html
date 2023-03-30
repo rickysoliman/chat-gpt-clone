@@ -1,14 +1,27 @@
 <div class="container">
-  <form (submit)="onSubmit(form)" #form="ngForm" class="user-form">
-    <textarea
-      type="text"
-      name="userInput"
-      placeholder="Send a message..."
-      ngModel
-      #text="ngModel"
-      class="user-input"></textarea>
-    <button
-      type="submit"
-      class="submit-button">Submit</button>
-  </form>
+  <div class="empty" *ngIf="!messages.length">No messages yet!</div>
+  <div class="chat" *ngIf="messages.length">
+    <div class="chat-messages">
+      <div *ngFor="let message of messages">
+        <div class="message" [ngStyle]="{ backgroundColor: message.owner === 'ChatGPT' ? 'rgba(68,70,84)' : 'rgba(52,53,65)' }">
+          <div class="message__owner">{{ message.owner }}</div>
+          <div class="message__text">{{ message.text }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-container">
+    <form (submit)="onSubmit(form)" #form="ngForm" class="user-form">
+      <textarea
+        type="text"
+        name="userInput"
+        placeholder="Send a message..."
+        ngModel
+        #text="ngModel"
+        class="user-input"></textarea>
+      <button
+        type="submit"
+        class="submit-button">Submit</button>
+    </form>
+  </div>
 </div>

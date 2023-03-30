@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Message } from './messages/message.model';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,10 @@ import { NgForm } from '@angular/forms';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  userInput = '';
+  messages: Message[] = [];
 
   onSubmit(form: NgForm) {
-    this.userInput = form.value.userInput;
-    console.log(this.userInput);
+    this.messages.push({ text: form.value.userInput, owner: 'User' });
+    form.resetForm();
   }
 }
