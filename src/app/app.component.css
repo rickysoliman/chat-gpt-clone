@@ -3,33 +3,33 @@ body {
   font-family: Söhne,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
 
-.container {
-  position: relative;
+.empty {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
+  overflow-y: auto;
+  padding: 10px;
+  color: #d1d5db;
+  font-family: Söhne,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
   overflow-y: auto;
   padding: 10px;
 }
 
-.form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.chat {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.chat-messages {
-  width: 100vw;
+.messages-container {
+  width: 75%;
   color: #d1d5db;
+  overflow-y: auto;
+  padding-bottom: 40px;
 }
 
 .message {
@@ -44,21 +44,29 @@ body {
 .message__owner {
   color: grey;
   font-size: 0.75rem;
-  /* border: 1px solid grey; */
   width: 100%;
 }
 
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  height: 50px;
+}
+
 .user-form {
-  border: 1px solid orange;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 48rem;
+  width: 75%;
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 75vw;
 }
 
 .user-input {
@@ -70,7 +78,9 @@ body {
   line-height: 1.5;
   background-color: rgba(68,70,84);
   color: rgb(249, 249, 252);
+  height: 100%;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .submit-button {
