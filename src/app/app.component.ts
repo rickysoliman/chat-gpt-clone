@@ -2,13 +2,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Message } from './messages/message.model';
 import { MessagesService } from './messages.service';
-import { Configuration, OpenAIApi } from "openai";
-
-const configuration = new Configuration({
-    organization: "org-hnYeoTlB0rVdBN3dMD98RHzj",
-    apiKey: process.env['OPENAI_API_KEY'],
-});
-const openai = new OpenAIApi(configuration);
 
 @Component({
   selector: 'app-root',

@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { OPENAI_API_KEY } from '../../openai-api-key';
 
 @Injectable()
 export class MessagesService {
   private apiUrl = 'https://api.openai.com/v1/chat/completions';
-  private apiKey = process.env['OPENAI_API_KEY'];
+  private apiKey = OPENAI_API_KEY; // TODO: figure out how to access from .env file
 
   constructor(private http: HttpClient) {}
 
