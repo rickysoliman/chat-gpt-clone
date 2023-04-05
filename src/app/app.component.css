@@ -34,7 +34,7 @@ body {
 
 .message {
   padding: 20px;
-  width: 100%;
+  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
